@@ -1,0 +1,9 @@
+pre-commit == 4.2.0
+ansible == 11.8.0
+kubernetes == 31.0.0
+openshift == 0.13.2
+botocore == 1.39.8
+boto3 == 1.39.8
+jmespath == 1.0.1
+poetry == 1.8.5
+

@@ -1,0 +1,40 @@
+{
+  // The AS VisualStudio Code DevContainer.
+  // Engineered to mimic the run-time environment of the published app
+  // but with DinD, git and poetry.
+  //
+  // For quick reference: https://containers.dev/implementors/json_reference/
+  "name": "Python Docker",
+  "build": {
+    "dockerfile": "Dockerfile" },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "42crunch.vscode-openapi",
+        "codezombiech.gitignore",
+        "donjayamanne.githistory",
+        "donjayamanne.git-extension-pack",
+        "eamodio.gitlens",
+        "github.vscode-github-actions",
+        "jebbs.plantuml",
+        "jimasp.behave-vsc",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-python.debugpy",
+        "ms-python.pylint",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "redhat.ansible",
+        "redhat.vscode-yaml",
+        "sourcery.sourcery",
+        "streetsidesoftware.code-spell-checker",
+        "trond-snekvik.simple-rst",
+        "vivaxy.vscode-conventional-commits",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}
+

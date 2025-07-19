@@ -1,0 +1,35 @@
+---
+name: build
+
+# Actions that take place everywhere
+# Here we build the container image but don't push it.
+
+# -----------------
+# Control variables (GitHub Secrets)
+# -----------------
+#
+# (n/a)
+#
+# -----------
+# Environment (GitHub Environments)
+# -----------
+#
+# Environment         (n/a)
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    - name: Build
+      uses: docker/build-push-action@v6
+      with:
+        platforms: linux/amd64,linux/arm64
