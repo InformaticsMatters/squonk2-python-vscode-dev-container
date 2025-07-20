@@ -16,11 +16,13 @@ The above creates an image with the following main components (amongst others): 
 -   Poetry (1.8)
 -   Pre-Commit (4.2)
 -   Ansible (11.8)
+-   kubectl (1.31)
+-   Popeye (0.22)
 -   Docker-in-Docker
 
 >   Separate branches of this repository will be maintained
-    for each active Major/Minor Python version in use. So you'll
-    find a 3.13 branch for our Python 3.13 base container.
+    for each active Major/Minor Python version used in our Projects.
+    So you'll find a 3.13 branch for our Python 3.13 projects.
 
 ---
 
