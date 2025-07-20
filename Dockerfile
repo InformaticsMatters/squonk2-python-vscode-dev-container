@@ -38,7 +38,7 @@ RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
         tar -xf popeye_linux_arm64.tar.gz; \
     elif [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
         wget https://github.com/derailed/popeye/releases/download/v${POPEYE_VERSION}/popeye_linux_amd64.tar.gz && \
-        tar -xf popeye_linux_arm64.tar.gz; \
+        tar -xf popeye_linux_amd64.tar.gz; \
     else \
         exit 112; \
     fi && \
