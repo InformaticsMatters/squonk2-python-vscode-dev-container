@@ -4,7 +4,13 @@
 
 An evolving set of files that can be used to create a [dev-container] to satisfy
 our Python development with Visual Studio Code. Just put these files into
-your project or workspace `.devcontainer` directory and VS Code should do the rest.
+your workspace `.devcontainer` directory and VS Code should do the rest.
+
+>   We recommend that you place these files in your **workspace** folder rather
+    than the repository clone/project folder. Why? We have *lots* of repositories
+    that share this configuration and although requirements may vary a little from
+    one source to another having one dev-container configuration is (at the moment)
+    better than than repeating it 20 or 30 times across all our repositories!
 
 1.  `devcontainer.json`
 2.  `Dockerfile`
