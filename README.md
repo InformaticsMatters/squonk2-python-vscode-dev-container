@@ -25,6 +25,11 @@ installed (amongst others): -
 Dev-Container expects this. This is where we put all our kubernetes cluster
 config files and it wil lbe mounted into the DevContainer as `/k8s-config`.
 
+A **postCreateCommand** is used to fix volume permissions of the command-history
+file when you first start the dev-container. This allows command history to
+persist between containers. You'll see a few messages ending with
+**Done. Press any key to close the terminal.**. Hit any key and you'll be *good-to-go*.
+
 >   Separate branches of this repository will be maintained
     for each active Major/Minor Python version used in our Projects.
     So you'll find a 3.13 branch for our Python 3.13 projects.
