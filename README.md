@@ -21,7 +21,7 @@ installed (amongst others): -
 
 -   python (3.13 "slim")
 -   poetry (1.8)
--   pre-Commit (4.2)
+-   pre-commit (4.2)
 -   ansible (11.8)
 -   kubectl (1.31)
 -   popeye (0.22)
