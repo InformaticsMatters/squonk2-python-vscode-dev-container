@@ -7,9 +7,25 @@
   "name": "Python Docker",
   "build": {
     "dockerfile": "Dockerfile" },
+  // User is expected to have a local ~/k8s-config directory
+  // and it's an error not to have this directory.
+  // We mount this into the container at /k8s-config.
+  //
+  // We also mount bash history in an attempt to preserver history
+  // between container restarts
+  // (see https://code.visualstudio.com/remote/advancedcontainers/persist-bash-history)
+  "mounts": [
+      "source=${localEnv:HOME}/k8s-config,target=/k8s-config,type=bind,consistency=cached",
+      "source=projectname-bashhistory,target=/commandhistory,type=volume"
+  ],
+  "postCreateCommand": {
+    "Fix Volume Permissions": "sudo chown -R $(whoami): /commandhistory"
+  },
+  // Install Docker-in-Docker
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker": {}
   },
+  // Add VSCode extensions that we normally use...
   "customizations": {
     "vscode": {
       "extensions": [
@@ -37,4 +53,3 @@
     }
   }
 }
-
