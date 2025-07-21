@@ -1,4 +1,4 @@
-ARG DEV_PYTHON="3.13.5-slim"
+ARG DEV_PYTHON=3.13.5
 FROM python:${DEV_PYTHON}
 
 # The target platform.
@@ -41,12 +41,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # Install our python requirements, and kubectl
 ARG KUBECTL_VERSION=1.31.11
 COPY requirements.txt /tmp
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        curl \
-        git \
-        wget \
-    && pip install -r /tmp/requirements.txt \
+RUN pip install -r /tmp/requirements.txt \
     && curl -LO https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/${TARGETPLATFORM}/kubectl \
     && install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl \
     && rm kubectl
