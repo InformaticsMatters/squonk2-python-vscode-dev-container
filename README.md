@@ -1,4 +1,4 @@
-# Squonk2 VS Code Python Dev Container
+# Squonk2 VS Code Python DevContainer
 
 ![build](https://github.com/informaticsmatters/squonk2-python-vscode-dev-container/actions/workflows/build.yaml/badge.svg?branch=3.13)
 
@@ -10,15 +10,20 @@ your project or workspace `.devcontainer` directory and VS Code should do the re
 2.  `Dockerfile`
 3.  `requirements.txt`
 
-The above creates an image with the following main components (amongst others): -
+The above creates an image with the user "vscode" and the following tools
+installed (amongst others): -
 
--   Python (3.13 "slim")
--   Poetry (1.8)
--   Pre-Commit (4.2)
--   Ansible (11.8)
+-   python (3.13 "slim")
+-   poetry (1.8)
+-   pre-Commit (4.2)
+-   ansible (11.8)
 -   kubectl (1.31)
--   Popeye (0.22)
+-   popeye (0.22)
 -   Docker-in-Docker
+
+**NOTE** You need a directory `~/k8s-config` on your local machine. The
+Dev-Container expects this. This is where we put all our kubernetes cluster
+config files and it wil lbe mounted into the DevContainer as `/k8s-config`.
 
 >   Separate branches of this repository will be maintained
     for each active Major/Minor Python version used in our Projects.
