@@ -19,7 +19,7 @@ your workspace `.devcontainer` directory and VS Code should do the rest.
 The above creates an image with the user "vscode" and the following tools
 installed (amongst others): -
 
--   python (3.13 "slim")
+-   python (3.13 debian)
 -   poetry (1.8)
 -   pre-commit (4.2)
 -   ansible (11.8)
