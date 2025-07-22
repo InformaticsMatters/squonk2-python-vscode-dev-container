@@ -6,7 +6,11 @@
   // For quick reference: https://containers.dev/implementors/json_reference/
   "name": "Python Docker",
   "build": {
-    "dockerfile": "Dockerfile" },
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+      "--network=host"
+  ],
   // User is expected to have a local ~/k8s-config directory
   // and it's an error not to have this directory.
   // We mount this into the container at /k8s-config.
