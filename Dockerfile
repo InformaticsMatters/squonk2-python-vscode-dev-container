@@ -48,6 +48,9 @@ RUN pip install -r /tmp/requirements.txt \
     && curl -LO https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/${TARGETPLATFORM}/kubectl \
     && install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl \
     && rm kubectl
+
+ENV UV_LINK_MODE=copy
+
 # Popeye (ARM or AMD)
 RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
         wget https://github.com/derailed/popeye/releases/download/v${POPEYE_VERSION}/popeye_linux_arm64.tar.gz && \
@@ -60,17 +63,5 @@ RUN if [ "$TARGETPLATFORM" = "linux/arm64" ]; then \
     fi \
     && mv popeye /usr/local/bin \
     && rm LICENSE README.md
-# uv
-ADD https://astral.sh/uv/${UV_VERSION}/install.sh /uv-installer.sh
-RUN apt-get update \
-    && apt-get install -y \
-        vim \
-    && sh /uv-installer.sh \
-    && rm /uv-installer.sh \
-    && mv /root/.local/bin/uv /usr/local/bin \
-    && mv /root/.local/bin/uvx /usr/local/bin \
-    && chown -R $USERNAME /usr/local/bin/uv \
-    && chown -R $USERNAME /usr/local/bin/uvx
-ENV UV_LINK_MODE=copy
 
 USER $USERNAME
