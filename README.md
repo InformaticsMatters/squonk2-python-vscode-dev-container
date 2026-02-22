@@ -19,12 +19,12 @@ your workspace `.devcontainer` directory and VS Code should do the rest.
 The above creates an image with the user "vscode" and the following tools
 installed (amongst others): -
 
--   python (3.13 debian)
--   uv (0.10.4)
--   pre-commit (4.2)
--   ansible (11.8)
--   kubectl (1.35)
--   popeye (0.22)
+-   python
+-   uv
+-   pre-commit
+-   ansible
+-   kubectl
+-   popeye
 -   Docker-in-Docker
 
 **NOTE** You need a directory `~/k8s-config` on your local machine. The

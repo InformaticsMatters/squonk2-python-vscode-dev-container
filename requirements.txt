@@ -1,7 +1,8 @@
-pre-commit == 4.2.0
-ansible == 11.8.0
-kubernetes == 31.0.0
+ansible == 13.3.0
+botocore == 1.42.43
+boto3 == 1.42.43
+jmespath == 1.1.0
+kubernetes == 35.0.0
 openshift == 0.13.2
-botocore == 1.39.8
-boto3 == 1.39.8
-jmespath == 1.0.1
+pre-commit == 4.5.1
+uv == 0.10.4
